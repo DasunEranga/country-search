@@ -3,10 +3,10 @@ import { useAppContext } from '../../context/AppContext';
 
 const CountryDetails = () => {
     const {country} = useAppContext();
-    console.log('cd', country);
+    console.log('country', country);
     return (
-        <div>
-            Selected Country {country.name.common}
+        <div className="row-start-1 row-end-3">
+            Selected Country {country && country.name.common}
         </div>
     );
 }

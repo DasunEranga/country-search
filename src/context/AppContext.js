@@ -12,11 +12,20 @@ const AppContext = createContext({});
  * @param {ReactNode} props.children - The child components of this provider.
  */
 const AppProvider = ({ children }) => {
-    const [country, setCountry] = useState('sri lanka');
+    const [countryList, setCountryList] = useState({});
+    const [country, setCountry] = useState(null);
+    const [loading, setLoading] = useState(false);
+    const [searchText, setSearchText] = useState("");
     // eslint-disable-next-line react/jsx-no-constructed-context-values
     const contextValue = {
         country,
         setCountry,
+        countryList,
+        setCountryList,
+        loading,
+        setLoading,
+        searchText,
+        setSearchText
     };
 
     return <AppContext.Provider value={contextValue}>{children}</AppContext.Provider>;

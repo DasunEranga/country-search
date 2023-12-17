@@ -1,23 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import fetchCountryListing from '../../services/apiCountry';
+import {fetchInitCountryListing} from '../../services/apiCountry';
 import { useAppContext } from '../../context/AppContext';
 
 
 const SearchResults = () => {
-    const {setCountry} = useAppContext();
-    const [loading, setLoading] = useState(false);
-    const [countryList, setCountryList] = useState({});
-
-    useEffect(() => {
-        const updateListing = async () => {
-            setLoading(true);
-            const countryList = await fetchCountryListing();
-            setCountryList(countryList);
-            countryList && setLoading(false);
-        };
-
-        updateListing();
-    }, []);
+    const { countryList, setCountryList, setCountry, loading, setLoading} = useAppContext();
     
     const handleSelectCountry = result => {
         console.log('res', result);
@@ -25,7 +12,7 @@ const SearchResults = () => {
     }
 
     return (
-        <div>
+        <div className="row-start-2 row-end-3'">
             <h2>SR {countryList?.length}</h2>
             {loading && <p>Loading results...</p>}
             {!loading && countryList?.length === 0 && <p>No results found.</p>}
