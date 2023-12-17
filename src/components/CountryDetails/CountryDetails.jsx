@@ -6,7 +6,7 @@ const CountryDetails = () => {
     console.log('cd', country);
     return (
         <div>
-            CD
+            Selected Country {country.name.common}
         </div>
     );
 }

@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import fetchCountryListing from '../../services/apiCountry';
-// import { useAppContext } from '../../context/AppContext';
+import { useAppContext } from '../../context/AppContext';
 
 
 const SearchResults = () => {
-    // const {country, setCountry} = useAppContext();
+    const {setCountry} = useAppContext();
     const [loading, setLoading] = useState(false);
     const [countryList, setCountryList] = useState({});
 
@@ -19,16 +19,20 @@ const SearchResults = () => {
         updateListing();
     }, []);
     
+    const handleSelectCountry = result => {
+        console.log('res', result);
+        setCountry(result);
+    }
 
     return (
         <div>
-            <h2>SR {countryList.length}</h2>
+            <h2>SR {countryList?.length}</h2>
             {loading && <p>Loading results...</p>}
-            {!loading && countryList.length === 0 && <p>No results found.</p>}
-            {!loading && countryList.length > 0 && (
+            {!loading && countryList?.length === 0 && <p>No results found.</p>}
+            {!loading && countryList?.length > 0 && (
                 <ul>
                 {countryList.map((result) => (
-                    <li key={result.name.common} >
+                    <li key={result.name.common} onClick={() => handleSelectCountry(result)}>
                         {result.name.common}
                     </li>
                 ))}
