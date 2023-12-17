@@ -5,8 +5,14 @@
 const fetchJsonResponse = async (path) => {
     try {
         const response = await fetch(path);
-        console.log('try');
-        return await response.json();
+        const data = await response.json();
+
+        // error handling
+        if (!response.ok) {
+        //   throw new Error('Network response was not ok');
+            console.error('Network response was not ok', response.statusText);
+        }
+        return data;
     } catch (error) {
         console.error('error');
         throw new Error(`Failed to fetch JSON response from path: ${path}. Error: ${error.message}`);

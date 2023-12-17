@@ -5,7 +5,7 @@ import CountryDetails from '../components/CountryDetails/CountryDetails';
 
 const Home = () => {
     return (
-        <div className='grid grid-cols-2'>
+        <div className="grid lg:grid-cols-2 max-w-screen-xs sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl mx-auto">
             <SearchInput />
             <SearchResults />
             <CountryDetails />

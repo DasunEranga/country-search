@@ -2,8 +2,10 @@ import React from 'react';
 
 const Header = () => {
     return (
-        <div>
-            <h1>ReactJS Country Search</h1>
+        <div className="container mx-auto">
+            <div className="py-16 text-4xl font-bold text-center">
+                <h1 className="">ReactJS Country Search</h1>
+            </div>
         </div>
     );
 }
