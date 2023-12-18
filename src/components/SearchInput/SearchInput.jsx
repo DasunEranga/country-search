@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useCallback, useEffect } from 'react';
-import {fetchSearchCountry, fetchInitCountryListing} from '../../services/apiCountries';
+import {fetchSearchCountry, fetchInitCountryListing} from '../../services/countriesAPI';
 import { useAppContext } from '../../context/AppContext';
 import _ from 'lodash';
 

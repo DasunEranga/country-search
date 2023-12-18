@@ -1,3 +1,4 @@
+// API call for query all list 
 const fetchInitCountryListing = async (filter = '') => {   
     try {
         const cachedData = localStorage.getItem('cachedData');
@@ -19,10 +20,10 @@ const fetchInitCountryListing = async (filter = '') => {
     }
 }
 
+// API call for query search text
 const fetchSearchCountry = async (query) => {   
     try {
         const response = await fetch(`https://restcountries.com/v3.1/name/${query}`);
-        // const response = await fetchJsonResponse(`https://restcountries.com/v3.1/all?${query}`);
         const data = await response.json();
         
         if (!response.ok) {
@@ -30,7 +31,6 @@ const fetchSearchCountry = async (query) => {
             console.error('Filterd country network response was not ok', response.statusText);
             return [];
         }
-        // console.log('data', data);
         return data;
     } catch (error) {   
         console.error('Error fetching country data:', error);
