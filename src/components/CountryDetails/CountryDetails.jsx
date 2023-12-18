@@ -5,7 +5,6 @@ const CountryDetails = () => {
     const {country, setCountry} = useAppContext();
     
     const handleClose = () => {
-        console.log('cleck');
         setCountry(null)
     }
 

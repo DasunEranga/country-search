@@ -32,7 +32,6 @@ const SearchInput = () => {
     const fetchFilteredCountries = async (query) => {
         setLoading(true);
         const fetchedCountries =  await fetchSearchCountry(query);
-        console.log('resul', fetchedCountries);
         setCountryList(fetchedCountries);
         fetchedCountries.length === 0 && setCountry(null)
         countryList && setLoading(false);
