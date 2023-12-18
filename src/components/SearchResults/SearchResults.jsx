@@ -19,10 +19,10 @@ const SearchResults = () => {
         <div className="relative lg:row-start-2 lg:row-end-3 after:block after:absolute after:w-full after:h-24 after:bottom-0 after:left-0 after:bg-gradient-to-b after:from-transparent after:to-white after:pointer-events-none">
             <div className=" w-full h-[60vh] overflow-y-auto p-4 rounded-xl text-3xl">
                 {loading && <p>Loading results...</p>}
-                {!loading && countryList?.message && <p>No results found.</p>}
+                {!loading && countryList?.length === 0 && <p>No results found.</p>}
                 {!loading && countryList?.length > 0 && (
                     <ul>
-                    {countryList.map((result) => (
+                    {countryList?.map((result) => (
                         <li 
                             key={result.name.common} 
                             onClick={() => handleSelectCountry(result)}

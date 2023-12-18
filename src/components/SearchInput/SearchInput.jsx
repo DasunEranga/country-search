@@ -7,7 +7,7 @@ import _ from 'lodash';
 
 const SearchInput = () => {
     // Destructure values from AppContext
-    const {countryList, setCountryList, setLoading} = useAppContext();
+    const {countryList, setCountryList, setCountry, setLoading} = useAppContext();
     const [query, setQuery] = useState("");
 
     /**
@@ -32,7 +32,9 @@ const SearchInput = () => {
     const fetchFilteredCountries = async (query) => {
         setLoading(true);
         const fetchedCountries =  await fetchSearchCountry(query);
+        console.log('resul', fetchedCountries);
         setCountryList(fetchedCountries);
+        fetchedCountries.length === 0 && setCountry(null)
         countryList && setLoading(false);
     };
 
@@ -52,7 +54,6 @@ const SearchInput = () => {
     const handleKeyUpDebounced = useCallback(
         _.debounce((value) => {
             value !== '' ? fetchFilteredCountries(value) : fetchAllCountries();
-            console.log('Debounced value after 5 seconds:', value);
         }, 500),
         []
     );
