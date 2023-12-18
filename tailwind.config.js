@@ -5,6 +5,7 @@ module.exports = {
   theme: {
     backgroundImage: {
       close: "url('./images/close.svg')",
+      'gradient-radial': 'linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,240,255,0) 100%);',
     },
     extend: {},
   },
