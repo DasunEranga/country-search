@@ -1,5 +1,3 @@
-import {fetchJsonResponse} from './util';
-
 const fetchInitCountryListing = async (filter = '') => {   
     try {
         const cachedData = localStorage.getItem('cachedData');
@@ -15,8 +13,6 @@ const fetchInitCountryListing = async (filter = '') => {
             }
             return data;
         }
-        
-    
     } catch (error) {
         console.error('Error fetching country data:', error);
         throw error; // Rethrow the error to handle it in the calling code
