@@ -7,7 +7,7 @@ import { useAppContext } from '../context/AppContext';
 const Home = () => {
     const {country} = useAppContext();
     return (
-        <div className={`grid ${country && 'lg:grid-cols-2'} container mx-auto`}>
+        <div className={`grid ${country && 'lg:grid-cols-2'} container mx-auto px-7`}>
             <SearchInput />
             <SearchResults />
             <CountryDetails />

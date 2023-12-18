@@ -6,7 +6,7 @@ import Footer from './components/Footer';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App h-[100vh]">
         <AppProvider>
           <Header/>
           <Home/>

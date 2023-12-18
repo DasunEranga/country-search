@@ -68,7 +68,7 @@ const SearchInput = () => {
     }
 
     return (
-        <div className='mb-10 lg:row-start-1 lg:row-end-2'>
+        <div className='mb-4 lg:mb-10 lg:row-start-1 lg:row-end-2'>
             <label className="text-sm font-medium text-gray-900 sr-only dark:text-white">
                 Search country name..
             </label>
@@ -77,15 +77,11 @@ const SearchInput = () => {
                     onChange={e => setQuery(e.target.value)}
                     value={query}
                     type="text"
-                    className="w-full p-4 border border-black rounded-xl text-3xl"
+                    className="w-full p-4 border border-black rounded-xl text-xl lg:text-2xl"
                     placeholder=" Search country name.."
                     required
                     onKeyUp={handleInputChange}
                 />
-    
-                <button className="absolute top-0 right-0 bottom-0 pr-4 text-white">
-                   Clear
-                </button>
             </div>
         </div>
     );
